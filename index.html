@@ -31,6 +31,7 @@
 			height: 100%;
 			transform: translateY(-3px); /* account for the height of the clock hands */
 			transform: rotate(90deg);
+			transition: all 0.5s;
 			transition-timing-function: cubic-bezier(0.13, 2.65, 0.58, 1)
 		}
 
@@ -39,7 +40,7 @@
 			height: 5px;
 			background-color: black;
 			top: 50%;
-			position: relative;
+			position: absolute;
 		}
 
 	</style>
@@ -52,15 +53,15 @@
 	</div>
 
 	<script>
-	// let rotateHand = document.getElementById('clockface');
-	// let time = 90;
-	// let move = setInterval(() => {
-	// 	rotateHand.style.transform = `rotate(${time}deg)`;
-	// 	time += 6;
-	// 	console.log(rotateHand);	
-	// }, 1000);
+	let rotateHand = document.getElementById('clockface');
+	let time = 90;
+	let move = setInterval(() => {
+		rotateHand.style.transform = `rotate(${time}deg)`;
+		time += 6;
+		console.log(rotateHand);	
+	}, 1000);
 
-	// move();
+	move();
 
 	</script>
 </body>
