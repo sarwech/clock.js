@@ -84,6 +84,16 @@
 
 		const sec = time.getSeconds();
 		const secDegrees = ((sec / 60) * 360) + 90;
+		if (sec == 0) {
+			rotateSec.style.transition = `none`;
+			rotateSec.style.transform = `rotate(${secDegrees}deg)`;
+		} else if (sec >= 1) {
+			rotateSec.style.transition = `all 0.5s`;
+			rotateSec.style["transition-timing-function"] = `cubic-bezier(0.13, 2.65, 0.58, 1)`;
+			rotateSec.style.transform = `rotate(${secDegrees}deg)`;
+		} else {
+			rotateSec.style.transform = `rotate(${secDegrees}deg)`;
+		}
 		console.log(sec);
 
 		rotateHour.style.transform = `rotate(${hourDegrees}deg)`;
